@@ -1,0 +1,45 @@
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>CodePen - leaflet_basic v1</title>
+
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    html,
+    body,
+    #map {
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+
+</head>
+
+<body translate="no">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <div id="map"></div>
+  <script>
+    var map_var = L.map("map").setView([38.89811803988366, -77.03646964835956], 18);
+    mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+    var layer = L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "&copy; " + mapLink + " Contributors",
+      maxZoom: 18
+    })
+    layer.addTo(map_var);
+  </script>
+
+</body>
+
+</html>
